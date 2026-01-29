@@ -1,20 +1,15 @@
-<h1 align="center">Hi 👋 I'm Cole Hackman</h1>
+<h1 align="center">Cole Hackman</h1>
 
-# 💫 About Me
-I’m a student at California Polytechnic State University (Cal Poly), originally from Seattle, WA and currently based in San Luis Obispo, CA. I’m studying computer science with a concentration in AI and machine learning, and I’m interested in building software that combines technical depth with real-world impact.
-
-I enjoy working on systems that people actually use, from AI-powered tools to full-stack web applications, and I bring a generalist mindset shaped by engineering, entrepreneurship, and business experience. In my free time, I enjoy DJing and mixing, going to the gym, hiking, and thrifting.
+# About Me
+I’m a student at Cal Poly SLO, originally from Seattle, WA and currently based in San Luis Obispo, CA. I’m studying computer science with a concentration in AI and machine learning, and I’m interested in building software that combines technical depth with real-world impact.
 
 ---
 
-## 🚀 What I’m Up To
+## What I’m Up To
 
-- Student developer in CodeBox Club, building backend authentication and marketplace features for a student marketplace used by Cal Poly students
-- Building projects outside of class related to my interests, including DJing and music workflows, sourcing and selling vintage clothing, and social media analytics
-- Developing and maintaining SC Toolkit, a SoundCloud power-user web app with 100+ monthly users
-- Developing and maintaining Unfollowr, a privacy-focused Instagram analysis tool used by 75 active users
+- Student developer in CodeBox Club, building backend authentication and marketplace features for a student marketplace unique to Cal Poly students
+- Building projects outside of class related to my personal interests, including DJing and music workflows, sourcing and selling clothing, and social media analytics
 - Running a small e-commerce business, Cole Soles, focused on online resale and wholesale distribution
-- Building and maintaining lakewashingtondetailing.com, including website improvements and internal tooling for my local service business
 
 ---
 
