@@ -12,7 +12,7 @@ I’m a student at Cal Poly SLO, originally from Seattle, WA and currently based
 
 ---
 
-## 🌐 Connect With Me
+## Connect With Me
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-000000?logo=vercel&logoColor=white)](https://www.colehackman.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/colehackman)
@@ -21,7 +21,7 @@ I’m a student at Cal Poly SLO, originally from Seattle, WA and currently based
 
 ---
 
-## 💻 Tech Stack
+## Tech Stack
 
 ### Languages
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
