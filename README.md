@@ -4,14 +4,6 @@ I’m a student at Cal Poly SLO, originally from Seattle, WA and currently based
 
 ---
 
-## What I’m Up To
-
-- Student developer in CodeBox Club, building backend authentication and marketplace features for a student marketplace unique to Cal Poly students
-- Building projects outside of class related to my personal interests, including DJing and music workflows, sourcing and selling clothing, and social media analytics
-- Running a small e-commerce business, Cole Soles, focused on online resale and wholesale distribution
-
----
-
 ## Connect With Me
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-000000?logo=vercel&logoColor=white)](https://www.colehackman.com)
