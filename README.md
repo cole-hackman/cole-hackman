@@ -14,5 +14,3 @@ I’m a student at Cal Poly SLO, originally from Seattle, WA and currently based
 ---
 
 ## Check out my projects below!
-
----
