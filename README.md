@@ -1,5 +1,5 @@
 <a href="https://www.colehackman.com">
-  <img src="https://raw.githubusercontent.com/cole-hackman/cole-hackman/main/chat.svg?v=a8b89de6" alt="Hi, I'm Cole! I'm a computer science student at Cal Poly SLO, concentrating in AI and machine learning. I like building software that pairs technical depth with real-world impact." />
+  <img src="https://raw.githubusercontent.com/cole-hackman/cole-hackman/main/chat/a8b89de6feed.svg" alt="Hi, I'm Cole! I'm a computer science student at Cal Poly SLO, concentrating in AI and machine learning. I like building software that pairs technical depth with real-world impact." />
 </a>
 
 ---

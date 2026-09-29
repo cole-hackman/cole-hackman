@@ -21,14 +21,16 @@ jobs:
           node-version: 22
       - name: Generate chat.svg
         run: node build-svg.mjs
-      # A new ?v= on the image URL makes GitHub's image cache fetch the fresh SVG.
-      - name: Bust image cache
+      # raw.githubusercontent.com caches by path and ignores query strings, so
+      # publish each version under a new path to make sure viewers get it.
+      - name: Publish versioned copy
         run: |
-          v=$(sha256sum chat.svg | cut -c1-8)
-          sed -i -E "s#(chat\.svg)(\?v=[0-9a-f]+)?\"#\1?v=$v\"#" README.md
+          v=$(sha256sum chat.svg | cut -c1-12)
+          rm -rf chat && mkdir chat && cp chat.svg "chat/$v.svg"
+          sed -i -E "s#src=\"[^\"]*chat[^\"]*\.svg[^\"]*\"#src=\"https://raw.githubusercontent.com/${{ github.repository }}/main/chat/$v.svg\"#" README.md
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add chat.svg README.md
+          git add -A chat.svg chat README.md
           git diff --cached --quiet || (git commit -m "Update chat.svg" && git push)
