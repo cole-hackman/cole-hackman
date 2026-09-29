@@ -1,4 +1,4 @@
-<svg width="520" height="240" viewBox="0 0 520 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="520" height="384" viewBox="0 0 520 384" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
     .bubble { fill: #e9e9eb; }
     .dot { fill: #8e8e93; animation: blink 1s infinite; }
@@ -71,9 +71,9 @@
   </g>
   <g transform="translate(0 122)">
     <g class="msg" style="animation-delay:5.20s">
-      <rect width="420" height="64" rx="18" class="bubble"/>
-      <text x="14" y="26">I like building software that pairs technical depth with</text>
-      <text x="14" y="48">real-world impact. My projects are below.</text>
+      <rect width="447" height="64" rx="18" class="bubble"/>
+      <text x="14" y="26">I’m based in San Luis Obispo, where it’s supposed to be</text>
+      <text x="14" y="48">77°F (25°C) and <tspan class="emoji">☀️</tspan> today.</text>
     </g>
   </g>
 
@@ -86,6 +86,36 @@
   </g>
   <g transform="translate(0 194)">
     <g class="msg" style="animation-delay:7.10s">
+      <rect width="457" height="64" rx="18" class="bubble"/>
+      <text x="14" y="26">Back home in Seattle it’s 59°F (15°C) and <tspan class="emoji">🌦️</tspan>. Shocking, I</text>
+      <text x="14" y="48">know.</text>
+    </g>
+  </g>
+
+  <g transform="translate(0 266)">
+    <g class="typing" style="animation-delay:7.60s">
+      <rect width="62" height="42" rx="21" class="bubble"/>
+      <circle cx="4" cy="38" r="4" class="bubble"/>
+      <circle cx="19" cy="21" r="4" class="dot" style="animation-delay:0s"/><circle cx="31" cy="21" r="4" class="dot" style="animation-delay:0.2s"/><circle cx="43" cy="21" r="4" class="dot" style="animation-delay:0.4s"/>
+    </g>
+  </g>
+  <g transform="translate(0 266)">
+    <g class="msg" style="animation-delay:9.00s">
+      <rect width="420" height="64" rx="18" class="bubble"/>
+      <text x="14" y="26">I like building software that pairs technical depth with</text>
+      <text x="14" y="48">real-world impact. My projects are below.</text>
+    </g>
+  </g>
+
+  <g transform="translate(0 338)">
+    <g class="typing" style="animation-delay:9.50s">
+      <rect width="62" height="42" rx="21" class="bubble"/>
+      <circle cx="4" cy="38" r="4" class="bubble"/>
+      <circle cx="19" cy="21" r="4" class="dot" style="animation-delay:0s"/><circle cx="31" cy="21" r="4" class="dot" style="animation-delay:0.2s"/><circle cx="43" cy="21" r="4" class="dot" style="animation-delay:0.4s"/>
+    </g>
+  </g>
+  <g transform="translate(0 338)">
+    <g class="msg" style="animation-delay:10.90s">
       <rect width="198" height="42" rx="18" class="bubble"/>
       <text x="14" y="26">Have a great Tuesday!</text>
     </g>
