@@ -42,8 +42,8 @@
   </g>
   <g transform="translate(0 0)">
     <g class="msg" style="animation-delay:1.40s">
-      <rect width="141" height="42" rx="18" class="bubble"/>
-      <text x="14" y="26">Hi, I’m Cole <tspan class="emoji">👋</tspan></text>
+      <rect width="115" height="42" rx="18" class="bubble"/>
+      <text x="14" y="26">Hi, I’m Cole</text>
     </g>
   </g>
 
@@ -73,7 +73,7 @@
     <g class="msg" style="animation-delay:5.20s">
       <rect width="420" height="64" rx="18" class="bubble"/>
       <text x="14" y="26">I like building software that pairs technical depth with</text>
-      <text x="14" y="48">real-world impact. My projects are below <tspan class="emoji">👇</tspan></text>
+      <text x="14" y="48">real-world impact. My projects are below.</text>
     </g>
   </g>
 
@@ -86,8 +86,8 @@
   </g>
   <g transform="translate(0 194)">
     <g class="msg" style="animation-delay:7.10s">
-      <rect width="224" height="42" rx="18" class="bubble"/>
-      <text x="14" y="26">Have a great Tuesday! <tspan class="emoji">✌️</tspan></text>
+      <rect width="198" height="42" rx="18" class="bubble"/>
+      <text x="14" y="26">Have a great Tuesday!</text>
     </g>
   </g>
 </svg>

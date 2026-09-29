@@ -19,12 +19,12 @@ const PLACES = {
 // lines are wrapped automatically. Messages with `weather: true` are skipped if
 // the weather API can't be reached.
 const MESSAGES = [
-  { text: 'Hi, I’m Cole 👋' },
+  { text: 'Hi, I’m Cole' },
   { text: 'I’m a computer science student at Cal Poly SLO, concentrating in AI and machine learning.' },
   { text: 'I’m based in San Luis Obispo, where it’s supposed to be {slo.degF}°F ({slo.degC}°C) and {slo.emoji} today.', weather: true },
   { text: '{seattleLine}', weather: true },
-  { text: 'I like building software that pairs technical depth with real-world impact. My projects are below 👇' },
-  { text: 'Have a great {weekday}! ✌️' },
+  { text: 'I like building software that pairs technical depth with real-world impact. My projects are below.' },
+  { text: 'Have a great {weekday}!' },
 ]
 
 // ---------------------------------------------------------------------------
@@ -64,14 +64,14 @@ function seattleLine(slo, seattle) {
   const temp = `${seattle.degF}°F (${seattle.degC}°C)`
   const diff = slo.degF - seattle.degF
   if (diff <= -5)
-    return `Meanwhile Seattle is somehow warmer at ${temp} and ${seattle.emoji}. Maybe I should’ve stayed 🤔`
+    return `Meanwhile Seattle is somehow warmer at ${temp} and ${seattle.emoji}. Maybe I should’ve stayed.`
   if (diff < 5)
-    return `Back home in Seattle it’s ${temp} and ${seattle.emoji}, so it’s basically a tie today 🤝`
+    return `Back home in Seattle it’s ${temp} and ${seattle.emoji}, so it’s basically a tie today.`
   if (seattle.rainy)
-    return `Back home in Seattle it’s ${temp} and ${seattle.emoji}. Shocking, I know ☔`
+    return `Back home in Seattle it’s ${temp} and ${seattle.emoji}. Shocking, I know.`
   if (diff >= 15)
-    return `Back home in Seattle it’s only ${temp} and ${seattle.emoji}. Not missing it too much 😎`
-  return `Back home in Seattle it’s ${temp} and ${seattle.emoji}, so SLO wins this round ☀️`
+    return `Back home in Seattle it’s only ${temp} and ${seattle.emoji}. Not missing it too much.`
+  return `Back home in Seattle it’s ${temp} and ${seattle.emoji}, so SLO wins this round.`
 }
 
 // ---------------------------------------------------------------------------
