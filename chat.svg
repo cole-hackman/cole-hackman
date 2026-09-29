@@ -1,0 +1,93 @@
+<svg width="520" height="240" viewBox="0 0 520 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bubble { fill: #e9e9eb; }
+    .dot { fill: #8e8e93; animation: blink 1s infinite; }
+    text {
+      fill: #1c1c1e;
+      font-size: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+    .emoji {
+      font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+    }
+    .typing { opacity: 0; animation: typing 1.4s ease-in-out both; }
+    .msg { opacity: 0; animation: pop 0.25s ease-out both; }
+
+    @keyframes typing {
+      0%, 100% { opacity: 0; }
+      20%, 85% { opacity: 1; }
+    }
+    @keyframes pop {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .bubble { fill: #3a3a3c; }
+      .dot { fill: #aeaeb2; }
+      text { fill: #f2f2f7; }
+    }
+  </style>
+
+  <g transform="translate(0 0)">
+    <g class="typing" style="animation-delay:0.00s">
+      <rect width="62" height="42" rx="21" class="bubble"/>
+      <circle cx="4" cy="38" r="4" class="bubble"/>
+      <circle cx="19" cy="21" r="4" class="dot" style="animation-delay:0s"/><circle cx="31" cy="21" r="4" class="dot" style="animation-delay:0.2s"/><circle cx="43" cy="21" r="4" class="dot" style="animation-delay:0.4s"/>
+    </g>
+  </g>
+  <g transform="translate(0 0)">
+    <g class="msg" style="animation-delay:1.40s">
+      <rect width="115" height="42" rx="18" class="bubble"/>
+      <text x="14" y="26">Hi, I’m Cole</text>
+    </g>
+  </g>
+
+  <g transform="translate(0 50)">
+    <g class="typing" style="animation-delay:1.90s">
+      <rect width="62" height="42" rx="21" class="bubble"/>
+      <circle cx="4" cy="38" r="4" class="bubble"/>
+      <circle cx="19" cy="21" r="4" class="dot" style="animation-delay:0s"/><circle cx="31" cy="21" r="4" class="dot" style="animation-delay:0.2s"/><circle cx="43" cy="21" r="4" class="dot" style="animation-delay:0.4s"/>
+    </g>
+  </g>
+  <g transform="translate(0 50)">
+    <g class="msg" style="animation-delay:3.30s">
+      <rect width="390" height="64" rx="18" class="bubble"/>
+      <text x="14" y="26">I’m a computer science student at Cal Poly SLO,</text>
+      <text x="14" y="48">concentrating in AI and machine learning.</text>
+    </g>
+  </g>
+
+  <g transform="translate(0 122)">
+    <g class="typing" style="animation-delay:3.80s">
+      <rect width="62" height="42" rx="21" class="bubble"/>
+      <circle cx="4" cy="38" r="4" class="bubble"/>
+      <circle cx="19" cy="21" r="4" class="dot" style="animation-delay:0s"/><circle cx="31" cy="21" r="4" class="dot" style="animation-delay:0.2s"/><circle cx="43" cy="21" r="4" class="dot" style="animation-delay:0.4s"/>
+    </g>
+  </g>
+  <g transform="translate(0 122)">
+    <g class="msg" style="animation-delay:5.20s">
+      <rect width="420" height="64" rx="18" class="bubble"/>
+      <text x="14" y="26">I like building software that pairs technical depth with</text>
+      <text x="14" y="48">real-world impact. My projects are below.</text>
+    </g>
+  </g>
+
+  <g transform="translate(0 194)">
+    <g class="typing" style="animation-delay:5.70s">
+      <rect width="62" height="42" rx="21" class="bubble"/>
+      <circle cx="4" cy="38" r="4" class="bubble"/>
+      <circle cx="19" cy="21" r="4" class="dot" style="animation-delay:0s"/><circle cx="31" cy="21" r="4" class="dot" style="animation-delay:0.2s"/><circle cx="43" cy="21" r="4" class="dot" style="animation-delay:0.4s"/>
+    </g>
+  </g>
+  <g transform="translate(0 194)">
+    <g class="msg" style="animation-delay:7.10s">
+      <rect width="198" height="42" rx="18" class="bubble"/>
+      <text x="14" y="26">Have a great Tuesday!</text>
+    </g>
+  </g>
+</svg>

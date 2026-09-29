@@ -1,6 +1,6 @@
-<h1 align="center">Cole Hackman</h1>
-
-I’m a student at Cal Poly SLO, originally from Seattle, WA and currently based in San Luis Obispo, CA. I’m studying computer science with a concentration in AI and machine learning, and I’m interested in building software that combines technical depth with real-world impact.
+<a href="https://www.colehackman.com">
+  <img src="./chat.svg" alt="Hi, I'm Cole! I'm a computer science student at Cal Poly SLO, concentrating in AI and machine learning. I like building software that pairs technical depth with real-world impact." />
+</a>
 
 ---
 
