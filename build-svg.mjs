@@ -22,7 +22,7 @@ const MESSAGES = [
   { text: 'Hi, I’m Cole 👋' },
   { text: 'I’m a computer science student at Cal Poly SLO, concentrating in AI and machine learning.' },
   { text: 'I’m based in San Luis Obispo, where it’s supposed to be {slo.degF}°F ({slo.degC}°C) and {slo.emoji} today.', weather: true },
-  { text: 'Back home in Seattle it’s {seattle.degF}°F ({seattle.degC}°C) and {seattle.emoji}, so {weatherTake}', weather: true },
+  { text: '{seattleLine}', weather: true },
   { text: 'I like building software that pairs technical depth with real-world impact. My projects are below 👇' },
   { text: 'Have a great {weekday}! ✌️' },
 ]
@@ -41,6 +41,8 @@ const WEATHER_EMOJI = {
   95: '⛈️', 96: '⛈️', 99: '⛈️',
 }
 
+const RAINY_CODES = new Set([51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82, 95, 96, 99])
+
 async function getWeather({ lat, lon }) {
   const url =
     `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}` +
@@ -53,15 +55,23 @@ async function getWeather({ lat, lon }) {
     degF,
     degC: Math.round(((degF - 32) * 5) / 9),
     emoji: WEATHER_EMOJI[json.daily.weather_code[0]] ?? '🌡️',
+    rainy: RAINY_CODES.has(json.daily.weather_code[0]),
   }
 }
 
-function weatherTake(slo, seattle) {
+// The Seattle message changes depending on how it compares to SLO today.
+function seattleLine(slo, seattle) {
+  const temp = `${seattle.degF}°F (${seattle.degC}°C)`
   const diff = slo.degF - seattle.degF
-  if (diff >= 15) return 'I’m not missing it too much 😎'
-  if (diff >= 5) return 'SLO wins today ☀️'
-  if (diff > -5) return 'pretty much a tie today 🤝'
-  return 'Seattle wins this one 🌲'
+  if (diff <= -5)
+    return `Meanwhile Seattle is somehow warmer at ${temp} and ${seattle.emoji}. Maybe I should’ve stayed 🤔`
+  if (diff < 5)
+    return `Back home in Seattle it’s ${temp} and ${seattle.emoji}, so it’s basically a tie today 🤝`
+  if (seattle.rainy)
+    return `Back home in Seattle it’s ${temp} and ${seattle.emoji}. Shocking, I know ☔`
+  if (diff >= 15)
+    return `Back home in Seattle it’s only ${temp} and ${seattle.emoji}. Not missing it too much 😎`
+  return `Back home in Seattle it’s ${temp} and ${seattle.emoji}, so SLO wins this round ☀️`
 }
 
 // ---------------------------------------------------------------------------
@@ -236,10 +246,7 @@ const values = {
     'slo.degF': slo.degF,
     'slo.degC': slo.degC,
     'slo.emoji': slo.emoji,
-    'seattle.degF': seattle.degF,
-    'seattle.degC': seattle.degC,
-    'seattle.emoji': seattle.emoji,
-    weatherTake: weatherTake(slo, seattle),
+    seattleLine: seattleLine(slo, seattle),
   }),
   weekday: new Intl.DateTimeFormat('en-US', { weekday: 'long', timeZone: PLACES.slo.tz }).format(new Date()),
 }
