@@ -21,9 +21,14 @@ jobs:
           node-version: 22
       - name: Generate chat.svg
         run: node build-svg.mjs
+      # A new ?v= on the image URL makes GitHub's image cache fetch the fresh SVG.
+      - name: Bust image cache
+        run: |
+          v=$(sha256sum chat.svg | cut -c1-8)
+          sed -i -E "s#(chat\.svg)(\?v=[0-9a-f]+)?\"#\1?v=$v\"#" README.md
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add chat.svg
+          git add chat.svg README.md
           git diff --cached --quiet || (git commit -m "Update chat.svg" && git push)
