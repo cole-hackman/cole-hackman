@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [build-svg.mjs, .github/workflows/update-readme.yml]
+    paths: [build-svg.mjs, build-activity.mjs, .github/workflows/update-readme.yml]
 
 permissions:
   contents: write
@@ -21,16 +21,25 @@ jobs:
           node-version: 22
       - name: Generate chat.svg
         run: node build-svg.mjs
+      # If the GitHub API is down, keep yesterday's activity.svg instead of
+      # blocking the chat update.
+      - name: Generate activity.svg
+        run: node build-activity.mjs
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # raw.githubusercontent.com caches by path and ignores query strings, so
       # publish each version under a new path to make sure viewers get it.
-      - name: Publish versioned copy
+      - name: Publish versioned copies
         run: |
-          v=$(sha256sum chat.svg | cut -c1-12)
-          rm -rf chat && mkdir chat && cp chat.svg "chat/$v.svg"
-          sed -i -E "s#src=\"[^\"]*chat[^\"]*\.svg[^\"]*\"#src=\"https://raw.githubusercontent.com/${{ github.repository }}/main/chat/$v.svg\"#" README.md
+          for name in chat activity; do
+            v=$(sha256sum "$name.svg" | cut -c1-12)
+            rm -rf "$name" && mkdir "$name" && cp "$name.svg" "$name/$v.svg"
+            sed -i -E "s#src=\"[^\"]*/$name/[^\"]*\.svg\"#src=\"https://raw.githubusercontent.com/${{ github.repository }}/main/$name/$v.svg\"#" README.md
+          done
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A chat.svg chat README.md
-          git diff --cached --quiet || (git commit -m "Update chat.svg" && git push)
+          git add -A chat.svg chat activity.svg activity README.md
+          git diff --cached --quiet || (git commit -m "Update chat.svg and activity.svg" && git push)
