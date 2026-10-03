@@ -73,7 +73,7 @@
     <g class="msg" style="animation-delay:5.20s">
       <rect width="447" height="64" rx="18" class="bubble"/>
       <text x="14" y="26">I’m based in San Luis Obispo, where it’s supposed to be</text>
-      <text x="14" y="48">79°F (26°C) and <tspan class="emoji">🌫️</tspan> today.</text>
+      <text x="14" y="48">91°F (33°C) and <tspan class="emoji">🌫️</tspan> today.</text>
     </g>
   </g>
 
@@ -86,9 +86,9 @@
   </g>
   <g transform="translate(0 194)">
     <g class="msg" style="animation-delay:7.10s">
-      <rect width="468" height="64" rx="18" class="bubble"/>
-      <text x="14" y="26">Back home in Seattle it’s 68°F (20°C) and <tspan class="emoji">☁️</tspan>, so SLO wins</text>
-      <text x="14" y="48">this round.</text>
+      <rect width="435" height="64" rx="18" class="bubble"/>
+      <text x="14" y="26">Back home in Seattle it’s only 69°F (21°C) and <tspan class="emoji">🌫️</tspan>. Not</text>
+      <text x="14" y="48">missing it too much.</text>
     </g>
   </g>
 
@@ -116,8 +116,8 @@
   </g>
   <g transform="translate(0 338)">
     <g class="msg" style="animation-delay:10.90s">
-      <rect width="181" height="42" rx="18" class="bubble"/>
-      <text x="14" y="26">Have a great Friday!</text>
+      <rect width="201" height="42" rx="18" class="bubble"/>
+      <text x="14" y="26">Have a great Saturday!</text>
     </g>
   </g>
 </svg>
