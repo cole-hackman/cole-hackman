@@ -73,7 +73,7 @@
     <g class="msg" style="animation-delay:5.20s">
       <rect width="447" height="64" rx="18" class="bubble"/>
       <text x="14" y="26">I’m based in San Luis Obispo, where it’s supposed to be</text>
-      <text x="14" y="48">90°F (32°C) and <tspan class="emoji">☀️</tspan> today.</text>
+      <text x="14" y="48">82°F (28°C) and <tspan class="emoji">🌫️</tspan> today.</text>
     </g>
   </g>
 
@@ -87,7 +87,7 @@
   <g transform="translate(0 194)">
     <g class="msg" style="animation-delay:7.10s">
       <rect width="435" height="64" rx="18" class="bubble"/>
-      <text x="14" y="26">Back home in Seattle it’s only 67°F (19°C) and <tspan class="emoji">☁️</tspan>. Not</text>
+      <text x="14" y="26">Back home in Seattle it’s only 63°F (17°C) and <tspan class="emoji">☁️</tspan>. Not</text>
       <text x="14" y="48">missing it too much.</text>
     </g>
   </g>
@@ -116,8 +116,8 @@
   </g>
   <g transform="translate(0 338)">
     <g class="msg" style="animation-delay:10.90s">
-      <rect width="191" height="42" rx="18" class="bubble"/>
-      <text x="14" y="26">Have a great Sunday!</text>
+      <rect width="198" height="42" rx="18" class="bubble"/>
+      <text x="14" y="26">Have a great Tuesday!</text>
     </g>
   </g>
 </svg>
