@@ -1,8 +1,8 @@
 <a href="https://www.colehackman.com">
-  <img src="https://raw.githubusercontent.com/cole-hackman/cole-hackman/main/chat/9615a652ac9a.svg" alt="Hi, I'm Cole! I'm a computer science student at Cal Poly SLO, concentrating in AI and machine learning. I like building software that pairs technical depth with real-world impact." />
+  <img src="https://raw.githubusercontent.com/cole-hackman/cole-hackman/main/chat/5ff87caaee13.svg" alt="Hi, I'm Cole! I'm a computer science student at Cal Poly SLO, concentrating in AI and machine learning. I like building software that pairs technical depth with real-world impact." />
 </a>
 
-<img src="https://raw.githubusercontent.com/cole-hackman/cole-hackman/main/activity/9582d35b9739.svg" alt="My GitHub contributions over the last year" />
+<img src="https://raw.githubusercontent.com/cole-hackman/cole-hackman/main/activity/794c9e6cbda0.svg" alt="My GitHub contributions over the last year" />
 
 ---
 
