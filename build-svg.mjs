@@ -2,7 +2,7 @@
 // Inspired by https://github.com/jasonlong/jasonlong
 //
 // Run with `node build-svg.mjs` (Node 18+, no dependencies).
-// A GitHub Action re-runs this daily so the weather and weekday stay fresh.
+// A GitHub Action re-runs this daily so the weekday stays fresh.
 
 import { writeFileSync } from 'node:fs'
 
@@ -10,69 +10,16 @@ import { writeFileSync } from 'node:fs'
 // Config
 // ---------------------------------------------------------------------------
 
-const PLACES = {
-  slo: { name: 'San Luis Obispo', lat: 35.2828, lon: -120.6596, tz: 'America/Los_Angeles' },
-  seattle: { name: 'Seattle', lat: 47.6062, lon: -122.3321, tz: 'America/Los_Angeles' },
-}
+const TIME_ZONE = 'America/Los_Angeles'
 
 // Each message is one paragraph; `{placeholders}` are filled in below and long
-// lines are wrapped automatically. Messages with `weather: true` are skipped if
-// the weather API can't be reached.
+// lines are wrapped automatically.
 const MESSAGES = [
   { text: 'Hi, I’m Cole' },
   { text: 'I’m a computer science student at Cal Poly SLO, concentrating in AI and machine learning.' },
-  { text: 'I’m based in San Luis Obispo, where it’s supposed to be {slo.degF}°F ({slo.degC}°C) and {slo.emoji} today.', weather: true },
-  { text: '{seattleLine}', weather: true },
   { text: 'I like building software that pairs technical depth with real-world impact. My projects are below.' },
   { text: 'Have a great {weekday}!' },
 ]
-
-// ---------------------------------------------------------------------------
-// Weather (Open-Meteo, free, no API key)
-// ---------------------------------------------------------------------------
-
-// WMO weather codes -> emoji
-const WEATHER_EMOJI = {
-  0: '☀️', 1: '🌤️', 2: '⛅', 3: '☁️', 45: '🌫️', 48: '🌫️',
-  51: '🌦️', 53: '🌦️', 55: '🌧️', 56: '🌧️', 57: '🌧️',
-  61: '🌧️', 63: '🌧️', 65: '🌧️', 66: '🌧️', 67: '🌧️',
-  71: '🌨️', 73: '🌨️', 75: '❄️', 77: '🌨️',
-  80: '🌦️', 81: '🌧️', 82: '🌧️', 85: '🌨️', 86: '❄️',
-  95: '⛈️', 96: '⛈️', 99: '⛈️',
-}
-
-const RAINY_CODES = new Set([51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82, 95, 96, 99])
-
-async function getWeather({ lat, lon }) {
-  const url =
-    `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}` +
-    '&daily=temperature_2m_max,weather_code&temperature_unit=fahrenheit&timezone=auto&forecast_days=1'
-  const res = await fetch(url)
-  if (!res.ok) throw new Error(`Open-Meteo returned ${res.status}`)
-  const json = await res.json()
-  const degF = Math.round(json.daily.temperature_2m_max[0])
-  return {
-    degF,
-    degC: Math.round(((degF - 32) * 5) / 9),
-    emoji: WEATHER_EMOJI[json.daily.weather_code[0]] ?? '🌡️',
-    rainy: RAINY_CODES.has(json.daily.weather_code[0]),
-  }
-}
-
-// The Seattle message changes depending on how it compares to SLO today.
-function seattleLine(slo, seattle) {
-  const temp = `${seattle.degF}°F (${seattle.degC}°C)`
-  const diff = slo.degF - seattle.degF
-  if (diff <= -5)
-    return `Meanwhile Seattle is somehow warmer at ${temp} and ${seattle.emoji}. Maybe I should’ve stayed.`
-  if (diff < 5)
-    return `Back home in Seattle it’s ${temp} and ${seattle.emoji}, so it’s basically a tie today.`
-  if (seattle.rainy)
-    return `Back home in Seattle it’s ${temp} and ${seattle.emoji}. Shocking, I know.`
-  if (diff >= 15)
-    return `Back home in Seattle it’s only ${temp} and ${seattle.emoji}. Not missing it too much.`
-  return `Back home in Seattle it’s ${temp} and ${seattle.emoji}, so SLO wins this round.`
-}
 
 // ---------------------------------------------------------------------------
 // Text measurement + wrapping
@@ -233,22 +180,8 @@ ${parts.join('\n')}
 // Main
 // ---------------------------------------------------------------------------
 
-let slo, seattle
-try {
-  ;[slo, seattle] = await Promise.all([getWeather(PLACES.slo), getWeather(PLACES.seattle)])
-  console.log('SLO:', slo, 'Seattle:', seattle)
-} catch (err) {
-  console.warn(`::warning::Couldn't fetch weather, skipping weather messages (${err.message})`)
-}
-
 const values = {
-  ...(slo && {
-    'slo.degF': slo.degF,
-    'slo.degC': slo.degC,
-    'slo.emoji': slo.emoji,
-    seattleLine: seattleLine(slo, seattle),
-  }),
-  weekday: new Intl.DateTimeFormat('en-US', { weekday: 'long', timeZone: PLACES.slo.tz }).format(new Date()),
+  weekday: new Intl.DateTimeFormat('en-US', { weekday: 'long', timeZone: TIME_ZONE }).format(new Date()),
 }
 
 const fill = (s) =>
@@ -257,6 +190,6 @@ const fill = (s) =>
     return values[key]
   })
 
-const messages = MESSAGES.filter((m) => slo || !m.weather).map((m) => fill(m.text))
+const messages = MESSAGES.map((m) => fill(m.text))
 writeFileSync('chat.svg', render(messages))
 console.log('Wrote chat.svg')
